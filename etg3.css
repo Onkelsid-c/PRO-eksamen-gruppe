@@ -1,3 +1,10 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -10,11 +17,18 @@ body {
   background-color: #1a1a1a;
 }
 
+/* Skjuler avkrysningsboksene */
+.steal-checkbox,
+.close-theft-checkbox {
+  display: none;
+}
+
 .museum-room {
-  position: relative;
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100vh;
-  z-index: 0;
 }
 
 .wall {
@@ -24,17 +38,7 @@ body {
   width: 100%;
   height: 85%;
   background: #2c2c2c;
-}
-
-.ceiling {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 5%;
-  background: #111111;
-  border-bottom: 3px solid #3d3d3d;
-  z-index: 2;
+  z-index: 0;
 }
 
 .floor {
@@ -74,6 +78,7 @@ body {
   box-shadow: 0 0 0 6px #2b1a11;
   z-index: 10;
   cursor: pointer;
+  transition: opacity 1s ease;
 }
 
 .picture {
@@ -163,7 +168,83 @@ body {
   z-index: 5;
 }
 
-/* --- POPUP MODAL CSS --- */
+/* --- VISITOR --- */
+.visitor {
+  position: absolute;
+  bottom: 8%;
+  right: 23%;
+  height: 350px;
+  width: auto;
+  z-index: 11;
+  animation: walk 2.5s ease-in-out infinite alternate;
+  transition: opacity 1s ease;
+}
+
+@keyframes walk {
+  from {
+    transform: translateX(-5px);
+  }
+  to {
+    transform: translateX(5px);
+  }
+}
+
+/* --- THIEF --- */
+.thief-label {
+  position: absolute;
+  bottom: 13%;
+  left: 0;
+  height: 250px;
+  width: auto;
+  z-index: 11;
+  cursor: pointer;
+  transition: opacity 1s ease;
+}
+
+.thief {
+  height: 330px;
+  width: auto;
+  display: block;
+  animation: steal 80s linear infinite;
+  transform-origin: center;
+}
+
+@keyframes steal {
+  0% {
+    transform: translateX(0) scaleX(1);
+  }
+  49.9% {
+    transform: translateX(85vw) scaleX(1);
+  }
+  50% {
+    transform: translateX(85vw) scaleX(-1);
+  }
+  99.9% {
+    transform: translateX(0) scaleX(-1);
+  }
+  100% {
+    transform: translateX(0) scaleX(1);
+  }
+}
+
+/* --- STEAL EFFECTS (Triggered by checkbox) --- */
+.steal-checkbox:checked ~ .museum-room .picture-frame,
+.steal-checkbox:checked ~ .museum-room .visitor,
+.steal-checkbox:checked ~ .museum-room .thief-label {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.steal-checkbox:checked ~ .theft-popup {
+  display: flex;
+}
+
+/* --- CLOSE THEFT POPUP LOGIC --- */
+.close-theft-checkbox:checked ~ .theft-popup {
+  display: none;
+}
+
+/* --- POPUP MODAL CSS (Generell) --- */
 .popup {
   display: none;
   position: fixed;
@@ -171,7 +252,7 @@ body {
   right: 0;
   bottom: 0;
   left: 0;
-  z-index: 10;
+  z-index: 100;
   align-items: center;
   justify-content: center;
   padding: 20px;
@@ -188,6 +269,7 @@ body {
   bottom: 0;
   left: 0;
   background: rgba(0, 0, 0, 0.75);
+  cursor: pointer;
 }
 
 .popup-content {
@@ -230,6 +312,7 @@ body {
   font-size: 30px;
   text-decoration: none;
   color: #333;
+  cursor: pointer;
 }
 
 .close:hover {

@@ -7,10 +7,12 @@
     <title>Skrik</title>
 </head>
 <body>
+  <input type="checkbox" id="steal-trigger" class="steal-checkbox">
+  <input type="checkbox" id="close-theft" class="close-theft-checkbox">
+
   <div class="museum-room">
     <div class="wall"></div>
     <div class="spotlight"></div>
-    <div class="ceiling"></div>
     
     <div class="picture-frame">
       <a href="#info-skrik">
@@ -18,36 +20,44 @@
       </a>
     </div>
 
+    <!-- Man looking at the painting -->
+    <img class="visitor" src="bilder/manlooking.png" alt="Besøkende som ser på maleriet">
+
+    <!-- Thief sneaking around (wrapped in a label to trigger the checkbox) -->
+    <label for="steal-trigger" class="thief-label">
+        <img class="thief" src="bilder/thiefskrik.png" alt="Tyv som stjeler maleriet">
+    </label>
+
+    <!-- Elevator and Exit Door -->
+    <img class="elevator" src="Bilder/heisdor.jpg" alt="Heisdør">
+    
+    <a class="elevatorbutton1" href="etg1.html">
+        <img src="Bilder/knapp-1.png" alt="Gå til etasje 1">
+    </a>
+    <a class="elevatorbutton2" href="etg2.html">
+        <img src="Bilder/knapp-2.png" alt="Gå til etasje 2">
+    </a>
+    <a class="elevatorbutton3" href="etg3.html">
+        <img src="Bilder/knapp-3.png" alt="Gå til etasje 3">
+    </a>
+    <a class="elevatorbutton4" href="etg4.html">
+        <img src="Bilder/knapp-4.png" alt="Gå til etasje 4">
+    </a>
+    <a class="elevatorbutton5" href="etg5.html">
+        <img src="Bilder/knapp-5.png" alt="Gå til etasje 5">
+    </a>
+    <a class="elevatorbutton6" href="etg6.html">
+        <img src="Bilder/knapp-6.png" alt="Gå til etasje 6">
+    </a>
+
+    <a href="etg1.html">
+        <img class="exitdoor" src="Bilder/exitdor.jpg" alt="Gå til 1. etasje">
+    </a>
+
     <div class="floor"></div>
   </div>
 
-  <!-- Elevator and Exit Door -->
-  <img class="elevator" src="Bilder/heisdor.jpg" alt="Heisdør">
-  
-  <a class="elevatorbutton1" href="etg1.html">
-      <img src="Bilder/knapp-1.png" alt="Gå til etasje 1">
-  </a>
-  <a class="elevatorbutton2" href="etg2.html">
-      <img src="Bilder/knapp-2.png" alt="Gå til etasje 2">
-  </a>
-  <a class="elevatorbutton3" href="etg3.html">
-      <img src="Bilder/knapp-3.png" alt="Gå til etasje 3">
-  </a>
-  <a class="elevatorbutton4" href="etg4.html">
-      <img src="Bilder/knapp-4.png" alt="Gå til etasje 4">
-  </a>
-  <a class="elevatorbutton5" href="etg5.html">
-      <img src="Bilder/knapp-5.png" alt="Gå til etasje 5">
-  </a>
-  <a class="elevatorbutton6" href="etg6.html">
-      <img src="Bilder/knapp-6.png" alt="Gå til etasje 6">
-  </a>
-
-  <a href="etg1.html">
-      <img class="exitdoor" src="Bilder/exitdor.jpg" alt="Gå til 1. etasje">
-  </a>
-
-  <!-- Popup Modal for Skrik -->
+  <!-- Popup Modal for Skrik (Standard info) -->
   <div class="popup" id="info-skrik">
     <a class="popup-background" href="#" aria-label="Lukk popup"></a>
 
@@ -70,6 +80,23 @@
             <img src="bilder/skrik2.jpg" alt="De fire versjonene av Skrik">
             <img src="bilder/skrik3.jpg" alt="Pokemon-kort inspirert av Skrik">
         </div>
+    </div>
+  </div>
+
+  <!-- Popup Modal for Theft History (Triggered by stealing) -->
+  <div class="popup theft-popup">
+    <label for="close-theft" class="popup-background" aria-label="Lukk popup"></label>
+
+    <div class="popup-content">
+        <label for="close-theft" class="close" aria-label="Lukk">×</label>
+
+        <h2>Tyveriene av Skrik</h2>
+        <p>
+            <span class="italic">Skrik</span> er et av verdens mest kjente malerier, og det har også vært utsatt for flere dristige tyverier. I 1994 ble en versjon stjålet fra Nasjonalgalleriet i Oslo. Tyvene brøt seg inn gjennom et vindu, klatret opp en stige og tok bildet mens museet var stengt. Tyveriet vakte enorm oppmerksomhet, og bildet ble gjenfunnet etter noen måneder.
+        </p>
+        <p>
+            I 2004 ble en annen versjon av <span class="italic">Skrik</span>, sammen med <span class="italic">Madonna</span>, stjålet fra Munchmuseet i Oslo. Denne gangen skjedde det midt på lyse dagen, da væpnede ranere truet ansatte og besøkende. Også denne gangen ble bildene gjenfunnet, men det tok to år. Disse hendelsene har gjort <span class="italic">Skrik</span> til et symbol ikke bare på kunstnerisk geni, men også på sikkerhetsutfordringene ved å huse uvurderlige kunstverk.
+        </p>
     </div>
   </div>
 </body>
