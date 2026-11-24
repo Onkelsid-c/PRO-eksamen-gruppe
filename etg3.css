@@ -86,7 +86,7 @@ body {
   height: 100%;
   object-fit: cover;
   display: block;
-  transition: transform 0.2s ease;
+  transition: transform 0.2s ease, opacity 1s ease;
 }
 
 .picture-frame:hover .picture {
@@ -228,7 +228,8 @@ body {
 }
 
 /* --- STEAL EFFECTS (Triggered by checkbox) --- */
-.steal-checkbox:checked ~ .museum-room .picture-frame,
+/* Endret: .picture-frame er fjernet herfra, slik at rammen blir stående */
+.steal-checkbox:checked ~ .museum-room .picture,
 .steal-checkbox:checked ~ .museum-room .visitor,
 .steal-checkbox:checked ~ .museum-room .thief-label {
   opacity: 0;
