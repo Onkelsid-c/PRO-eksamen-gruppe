@@ -17,7 +17,7 @@ body {
   background-color: #1a1a1a;
 }
 
-/* Skjuler avkrysningsboksene */
+/* Skjuler selve avkrysningsboksene, men de brukes for å utløse effekter */
 .steal-checkbox,
 .close-theft-checkbox {
   display: none;
@@ -65,6 +65,7 @@ body {
   z-index: 1;
 }
 
+/* Selve rammen. Denne blir stående igjen etter tyveriet. */
 .picture-frame {
   position: absolute;
   top: 20%;
@@ -81,6 +82,7 @@ body {
   transition: opacity 1s ease;
 }
 
+/* Selve bildet. Dette er elementet som forsvinner under tyveriet. */
 .picture {
   width: 100%;
   height: 100%;
@@ -97,7 +99,7 @@ body {
   transform: scale(0.97);
 }
 
-/* --- ELEVATOR AND DOOR CSS --- */
+/* Heis og dør */
 .elevator {
   position: absolute;
   left: 2%;
@@ -168,7 +170,7 @@ body {
   z-index: 5;
 }
 
-/* --- VISITOR --- */
+/* Mannen som ser på bildet */
 .visitor {
   position: absolute;
   bottom: 8%;
@@ -189,7 +191,7 @@ body {
   }
 }
 
-/* --- THIEF --- */
+/* Tyven som går frem og tilbake */
 .thief-label {
   position: absolute;
   bottom: 13%;
@@ -209,6 +211,7 @@ body {
   transform-origin: center;
 }
 
+/* Animasjon som får tyven til å gå frem og tilbake, og snu seg */
 @keyframes steal {
   0% {
     transform: translateX(0) scaleX(1);
@@ -227,8 +230,7 @@ body {
   }
 }
 
-/* --- STEAL EFFECTS (Triggered by checkbox) --- */
-/* Endret: .picture-frame er fjernet herfra, slik at rammen blir stående */
+/* Når tyven klikkes (checkbox checked), fader bildet, mannen og tyven ut */
 .steal-checkbox:checked ~ .museum-room .picture,
 .steal-checkbox:checked ~ .museum-room .visitor,
 .steal-checkbox:checked ~ .museum-room .thief-label {
@@ -236,16 +238,17 @@ body {
   pointer-events: none;
 }
 
+/* Viser tyveri-popupen når tyven klikkes */
 .steal-checkbox:checked ~ .theft-popup {
   display: flex;
 }
 
-/* --- CLOSE THEFT POPUP LOGIC --- */
+/* Skjuler tyveri-popupen når lukkeknappen klikkes */
 .close-theft-checkbox:checked ~ .theft-popup {
   display: none;
 }
 
-/* --- POPUP MODAL CSS (Generell) --- */
+/* Generell styling for popup-vinduer */
 .popup {
   display: none;
   position: fixed;
@@ -259,6 +262,7 @@ body {
   padding: 20px;
 }
 
+/* Åpner standard info-popup via :target */
 .popup:target {
   display: flex;
 }
