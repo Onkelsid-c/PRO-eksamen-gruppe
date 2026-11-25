@@ -1,6 +1,6 @@
 /* Henter bakgrunnsbilde */
 body {
-    background-image: url("filer/Panoramic Swirling Sky and Forest Shoreline.png");
+    background-image: url("bilder/Panoramic Swirling Sky and Forest Shoreline.png");
     height: 100vh;
     background-size: cover;
 }
