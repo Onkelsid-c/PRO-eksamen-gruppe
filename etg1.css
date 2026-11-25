@@ -1,0 +1,74 @@
+/* Henter bakgrunnsbilde */
+body {
+    background-image: url("filer/Panoramic Swirling Sky and Forest Shoreline.png");
+    height: 100vh;
+    background-size: cover;
+}
+
+/* Bilde av museumbygning */
+.munchmuseum {
+    position: absolute;
+
+    width: 850px;
+
+    top: 110px;
+    left: 850px;
+}
+
+/* Knapp som PNG fil */
+.munchknapp {
+    position: absolute;
+    z-index: 100;
+
+    width: 80px;
+
+    top: 570px;
+    left: 900px;
+
+    animation: pulseeffect 3s linear infinite;
+}
+
+/* Kobler til munchknapp for animation */
+@keyframes pulseeffect {
+    0% {
+        transform: scale(1);
+    }
+    25% {
+        transform: scale(1.2);
+
+    }
+    50% {
+        transform: scale(1.4);
+
+    }
+    75% {
+        transform: scale(1.2);
+
+    }
+    100% {
+        transform: scale(1);
+    }
+
+
+}
+
+/* Bildeboks */
+.listeboks {
+    position: absolute;
+    top: 100px;
+    left: 100px;
+
+    width: 570px;
+    padding: 10px;
+
+    line-height: 25px;
+
+    background-color: rgb(128, 135, 193);
+    border: 6px solid rgb(100 100 200);
+    border-radius: 20px;
+
+    font-family:'Times New Roman', Times, serif;
+    color: rgb(0, 0, 0);
+    font-size:40px;
+    text-align: center;
+}
