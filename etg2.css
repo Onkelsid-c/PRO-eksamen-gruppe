@@ -152,6 +152,41 @@ body {
     left: 62%;
 }
 
+/* Navn skilt */
+.namebox {
+    position: absolute;
+    inset: 0;
+    z-index: 6;
+    pointer-events: none;
+}
+
+.namebox1,
+.namebox2,
+.namebox3 {
+    position: absolute;
+    width: 150px;
+    min-height: 40px;
+    padding: 10px;
+    background-color: #d4beb7;
+    color: #292522;
+    text-align: center;
+}
+
+.namebox1 {
+    left: 25%;
+    bottom: 30%;
+}
+
+.namebox2 {
+    left: 45%;
+    bottom: 30%;
+}
+
+.namebox3 {
+    left: 68%;
+    bottom: 30%;
+}
+
 /* Maleriene */
 .picture {
     position: absolute;
