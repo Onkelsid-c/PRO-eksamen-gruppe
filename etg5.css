@@ -1,0 +1,266 @@
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    color: #29251f;
+    font-family: Georgia, "Times New Roman", serif;
+    background: #e8e2d7;
+}
+
+/* Hele museumsrommet */
+.museum-room {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    min-height: 620px;
+    overflow: hidden;
+    background: #eee9df;
+}
+
+/* Veggen og en enkel gulvflate */
+.wall {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 0;
+    background: linear-gradient(
+        to bottom,
+        #f1ece2 0%,
+        #e8e1d5 82%,
+        #c9bda9 82%,
+        #b9aa94 100%
+    );
+}
+
+/* Heis og utgang ligger på samme vegg */
+.doors {
+    position: absolute;
+    top: 12%;
+    right: 3%;
+    bottom: 14%;
+    left: 3%;
+    z-index: 2;
+}
+
+/* Heisdøra */
+.elevator {
+    position: absolute;
+    top: 12%;
+    left: 0;
+    width: 17%;
+    height: 76%;
+    border: 8px solid #77736d;
+    box-shadow: 0 8px 20px #0003;
+    object-fit: cover;
+
+    /* Dette gir en liten animert bevegelse, men åpner ikke dørene hver for seg. */
+    animation: elevator-movement 5s ease-in-out infinite alternate;
+}
+
+/* Etasjeknappene */
+.elevatorbutton1,
+.elevatorbutton2,
+.elevatorbutton3,
+.elevatorbutton4,
+.elevatorbutton5,
+.elevatorbutton6 {
+    position: absolute;
+    left: 18%;
+    width: 4%;
+    height: 6%;
+}
+
+.elevatorbutton1 { top: 29%; }
+.elevatorbutton2 { top: 37%; }
+.elevatorbutton3 { top: 45%; }
+.elevatorbutton4 { top: 53%; }
+.elevatorbutton5 { top: 61%; }
+.elevatorbutton6 { top: 69%; }
+
+.elevatorbutton1 img,
+.elevatorbutton2 img,
+.elevatorbutton3 img,
+.elevatorbutton4 img,
+.elevatorbutton5 img,
+.elevatorbutton6 img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    cursor: pointer;
+    transition: transform 0.2s ease, filter 0.2s ease;
+}
+
+.elevatorbutton1:hover img,
+.elevatorbutton2:hover img,
+.elevatorbutton3:hover img,
+.elevatorbutton4:hover img,
+.elevatorbutton5:hover img,
+.elevatorbutton6:hover img {
+    transform: scale(1.12);
+    filter: brightness(1.2);
+}
+
+/* EXIT-dør og EXIT-skilt */
+.exitdoor {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 17%;
+    height: 57%;
+    object-fit: contain;
+    object-position: bottom;
+    transform-origin: left center;
+    filter: drop-shadow(0 8px 10px #0004);
+    animation: exit-door-opening 6s ease-in-out infinite alternate;
+}
+
+.exit-sign {
+    position: absolute;
+    right: 3%;
+    bottom: 59%;
+    width: 12%;
+    padding: 10px;
+    border: 3px solid #e9e1cb;
+    border-radius: 4px;
+    color: #fff;
+    background: #a31919;
+    box-shadow: 0 0 8px #a31919;
+    font-family: Arial, sans-serif;
+    font-size: clamp(14px, 2vw, 24px);
+    font-weight: bold;
+    letter-spacing: 3px;
+    text-align: center;
+    transition: background 0.4s ease, box-shadow 0.4s ease, transform 0.4s ease;
+}
+
+.exit-sign:hover {
+    background: #f02727;
+    box-shadow: 0 0 14px #ff2929, 0 0 30px #ff2929;
+    transform: scale(1.08);
+    animation: exit-sign-blink 0.8s ease-in-out infinite alternate;
+}
+
+/* De tre maleriene på midten av veggen */
+.picture {
+    position: absolute;
+    top: 25%;
+    left: 24%;
+    z-index: 3;
+    display: grid;
+    width: 52%;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 3%;
+}
+
+.picture a {
+    display: block;
+    padding: 10px;
+    border: 8px solid #80643c;
+    border-radius: 2px;
+    background: #d4bd8c;
+    box-shadow: 0 8px 18px #0004;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.picture a:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 24px #0005;
+}
+
+.picture img {
+    display: block;
+    width: 100%;
+    height: 36vh;
+    min-height: 180px;
+    max-height: 360px;
+    object-fit: contain;
+    background: #211d19;
+}
+
+/* Rammene lages rundt bildene over. */
+.pictureframe {
+    display: none;
+}
+
+/* Popup-vinduer */
+.popup {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 10;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+    background: #0009;
+}
+
+.popup:target {
+    display: flex;
+}
+
+.popup-background {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+
+.popup-content {
+    position: relative;
+    z-index: 1;
+    width: min(600px, 90%);
+    padding: 30px;
+    border: 5px solid #80643c;
+    background: #f5f0e6;
+    box-shadow: 0 10px 35px #0006;
+    line-height: 1.6;
+}
+
+.close {
+    position: absolute;
+    top: 8px;
+    right: 14px;
+    color: #29251f;
+    font-size: 30px;
+    text-decoration: none;
+}
+
+/* Animasjoner */
+@keyframes exit-sign-blink {
+    from {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0.65;
+    }
+}
+
+@keyframes exit-door-opening {
+    from {
+        transform: perspective(700px) rotateY(0deg);
+    }
+
+    to {
+        transform: perspective(700px) rotateY(-35deg);
+    }
+}
+
+@keyframes elevator-movement {
+    from {
+        transform: scaleX(1);
+    }
+
+    to {
+        transform: scaleX(0.96);
+    }
+}
