@@ -12,11 +12,11 @@ html, body {
 
 body {
     position: relative;
-    min-height: 100vh;
+    min-height: 900px;
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
-    padding: 0 1.5vw 28vh;
+    padding: 0 1.5vw 252px;
     background-color: rgba(7, 6, 5, 1);
 }
 
@@ -32,12 +32,12 @@ body {
 
 .vegg {
     top: 0;
-    height: calc(100% - 28vh);
+    height: calc(100% - 252px);
 }
 
 .gulv {
     bottom: 0;
-    height: 28vh;
+    height: 252px;
 }
 
 /* shadow line between wall and floor */
@@ -46,7 +46,7 @@ body::before {
     position: absolute;
     left: 0;
     right: 0;
-    bottom: 28vh;
+    bottom: 252px;
     z-index: 1;
     height: 14px;
     background: linear-gradient(to bottom, rgba(0, 0, 0, 0.55), transparent);
@@ -62,7 +62,7 @@ body::before {
     gap: 1.4vw;
     flex: 1 1 auto;
     min-width: 0;
-    margin: 0 8vw 10vh 0;
+    margin: 0 8vw 90px 0;
 }
 
 .maleri-plass {
@@ -74,10 +74,10 @@ body::before {
 }
 
 .maleri {
-    padding: 0.35vh;
-    border: 0.4vh solid rgba(58, 44, 34, 1);
+    padding: 3.15px;
+    border: 3.6px solid rgba(58, 44, 34, 1);
     background: rgba(16, 12, 10, 1);
-    box-shadow: inset 0 0 0 0.15vh rgba(106, 83, 64, 1), 0 1vh 1.8vh rgba(0, 0, 0, 0.7);
+    box-shadow: inset 0 0 0 1.35px rgba(106, 83, 64, 1), 0 9px 16.2px rgba(0, 0, 0, 0.7);
     line-height: 0;
     cursor: pointer;
 }
@@ -85,27 +85,27 @@ body::before {
 .ghost {
     position: absolute;
     z-index: 4;
-    height: 14vh;
+    height: 126px;
     width: auto;
     left: 0;
-    top: -16vh;
+    top: -144px;
     pointer-events: none;
     animation: fly 16s ease-in-out infinite;
 }
 
 @keyframes fly {
-    0% { left: -6%; top: -18vh; }
-    18% { left: 30%; top: -26vh; }
-    37% { left: 70%; top: -16.5vh; }
-    55% { left: 86%; top: -23vh; }
-    74% { left: 42%; top: -17vh; }
-    100% { left: -6%; top: -18vh; }
+    0% { left: -6%; top: -162px; }
+    18% { left: 30%; top: -234px; }
+    37% { left: 70%; top: -148.5px; }
+    55% { left: 86%; top: -207px; }
+    74% { left: 42%; top: -153px; }
+    100% { left: -6%; top: -162px; }
 }
 
 .info {
     position: absolute;
     left: 50%;
-    bottom: calc(100% + 1.6vh);
+    bottom: calc(100% + 14.4px);
     z-index: 6;
     width: min(640px, 92%);
     padding: 16px 28px 18px;
@@ -143,14 +143,14 @@ body::before {
 .maleri img {
     display: block;
     width: auto;
-    height: 22vh;
+    height: 198px;
     max-width: 18vw;
     object-fit: contain;
 }
 
 .navnskilt {
     height: 44px;
-    margin: 1.2vh 0 0;
+    margin: 10.8px 0 0;
     padding: 0 16px;
     display: flex;
     align-items: center;
@@ -171,11 +171,11 @@ body::before {
     display: flex;
     align-items: center;
     flex-shrink: 0;
-    gap: 1.2vh;
+    gap: 10.8px;
 }
 
 .dor {
-    height: 34vh;
+    height: 306px;
     width: auto;
     display: block;
 }
