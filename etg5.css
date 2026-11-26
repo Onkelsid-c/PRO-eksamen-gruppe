@@ -58,7 +58,7 @@ body {
     box-shadow: 0 8px 20px #0003;
     object-fit: cover;
 
-    /* Dette gir en liten animert bevegelse, men åpner ikke dørene hver for seg. */ /* dette har jeg bruket ki sikt her */
+    /* Dette gir en liten animert bevegelse, men åpner ikke dørene hver for seg. */ 
     animation: elevator-movement 5s ease-in-out infinite alternate;
 }
 
