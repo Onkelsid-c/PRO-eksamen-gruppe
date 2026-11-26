@@ -244,7 +244,7 @@ body {
         opacity: 0.65;
     }
 }
-
+/* Jeg brukte KI som hjelp til å skrive og forstå denne animasjonen. */
 @keyframes exit-door-opening {
     from {
         transform: perspective(700px) rotateY(0deg);
