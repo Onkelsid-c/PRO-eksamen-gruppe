@@ -5,11 +5,13 @@
     box-sizing: border-box;
 }
 
+/* Full høyde og mørk bakgrunn */
 html, body {
     height: 100%;
     background: rgba(12, 10, 9, 1);
 }
 
+/* Heis, malerier og utgang langs bunnen */
 body {
     position: relative;
     min-height: 900px;
@@ -29,11 +31,13 @@ body {
     z-index: 0;
 }
 
+/* Veggbildet fyller området over gulvet */
 .vegg {
     top: 0;
     height: calc(100% - 252px);
 }
 
+/* Gulvbildet ligger nederst */
 .gulv {
     bottom: 0;
     height: 252px;
@@ -51,6 +55,7 @@ body::before {
     background: linear-gradient(to bottom, rgba(0, 0, 0, 0.55), transparent);
 }
 
+/* Rad med malerier midt på veggen */
 .malerier {
     position: relative;
     z-index: 2;
@@ -60,9 +65,10 @@ body::before {
     gap: 1.4vw;
     flex: 1 1 auto;
     min-width: 0;
-    margin: 0 4vw 90px 0;
+    margin: 0 8vw 100px 0;
 }
 
+/* Ett maleri med skilt under */
 .maleri-plass {
     display: flex;
     flex-direction: column;
@@ -71,38 +77,42 @@ body::before {
     min-width: 0;
 }
 
+/* Ramme rundt bildet */
 .maleri {
-    padding: 3px;
+    padding: 4px;
     border: 4px solid rgba(58, 44, 34, 1);
     background: rgba(16, 12, 10, 1);
-    box-shadow: inset 0 0 0 1px rgba(106, 83, 64, 1), 0 9px 16px rgba(0, 0, 0, 0.7);
+    box-shadow: inset 0 0 0 2px rgba(106, 83, 64, 1), 0 10px 18px rgba(0, 0, 0, 0.7);
     line-height: 0;
     cursor: pointer;
 }
 
+/* Spøkelse som flyr over maleriene */
 .ghost {
     position: absolute;
     z-index: 4;
-    height: 126px;
+    height: 140px;
     width: auto;
     left: 0;
-    top: -144px;
+    top: -160px;
+    pointer-events: none;
     animation: fly 16s ease-in-out infinite;
 }
-
+/* Brukt AI til animasjonen for å få de beste nummerene*/
 @keyframes fly {
-    0% { left: -6%; top: -162px; }
-    18% { left: 30%; top: -234px; }
-    37% { left: 70%; top: -149px; }
-    55% { left: 86%; top: -207px; }
-    74% { left: 42%; top: -153px; }
-    100% { left: -6%; top: -162px; }
+    0% { left: -6%; top: -180px; }
+    18% { left: 30%; top: -260px; }
+    37% { left: 70%; top: -165px; }
+    55% { left: 86%; top: -230px; }
+    74% { left: 42%; top: -170px; }
+    100% { left: -6%; top: -180px; }
 }
 
+/* Infoboble over maleriet, skjult til musepekeren er over bildet */
 .info {
     position: absolute;
     left: 50%;
-    bottom: calc(100% + 14px);
+    bottom: calc(100% + 16px);
     z-index: 6;
     width: min(640px, 92%);
     padding: 16px 28px 18px;
@@ -117,6 +127,7 @@ body::before {
     transition: opacity 0.35s ease, transform 0.35s ease;
 }
 
+/* Overskrift i infoboblen */
 .info h2 {
     margin: 0 0 6px;
     font-family: Georgia, serif;
@@ -124,6 +135,7 @@ body::before {
     font-weight: normal;
 }
 
+/* Tekst i infoboblen */
 .info p {
     margin: 0;
     font-family: Georgia, serif;
@@ -131,22 +143,25 @@ body::before {
     line-height: 1.45;
 }
 
+/* Viser infoboblen ved hover */
 .maleri-plass:has(.maleri:hover) .info {
     opacity: 1;
     transform: translateX(-50%) translateY(0);
 }
 
+/* Størrelse på selve maleriet */
 .maleri img {
     display: block;
     width: auto;
-    height: 198px;
+    height: 220px;
     max-width: 18vw;
     object-fit: contain;
 }
 
+/* Navneskilt under hvert maleri */
 .navnskilt {
     height: 44px;
-    margin: 11px 0 0;
+    margin: 12px 0 0;
     padding: 0 16px;
     display: flex;
     align-items: center;
@@ -161,27 +176,30 @@ body::before {
     white-space: nowrap;
 }
 
+/* Heisdør og knapper til venstre */
 .venstre {
     position: relative;
     z-index: 2;
     display: flex;
     align-items: center;
     flex-shrink: 0;
-    gap: 11px;
+    gap: 12px;
 }
 
+/* Høyde på dørbildene */
 .dor {
-    height: 306px;
+    height: 340px;
     width: auto;
     display: block;
 }
 
+/* Etasjeknappene stablet under hverandre */
 .heisknapper {
     display: flex;
     flex-direction: column;
     gap: 10px;
 }
-
+/* Brukt AI for repitisjon*/
 .elevatorbutton1, .elevatorbutton2, .elevatorbutton3,
 .elevatorbutton4, .elevatorbutton5, .elevatorbutton6 {
     width: 30px;
@@ -190,16 +208,19 @@ body::before {
     transition: transform 0.2s ease;
 }
 
+/* Knappen vokser litt ved hover */
 .elevatorbutton1:hover, .elevatorbutton2:hover, .elevatorbutton3:hover,
 .elevatorbutton4:hover, .elevatorbutton5:hover, .elevatorbutton6:hover {
     transform: scale(1.25);
 }
 
+/* Knappen krymper litt når den trykkes */
 .elevatorbutton1:active, .elevatorbutton2:active, .elevatorbutton3:active,
 .elevatorbutton4:active, .elevatorbutton5:active, .elevatorbutton6:active {
     transform: scale(0.9);
 }
 
+/* Knappbildet fyller knappen */
 .elevatorbutton1 img, .elevatorbutton2 img, .elevatorbutton3 img,
 .elevatorbutton4 img, .elevatorbutton5 img, .elevatorbutton6 img {
     width: 90%;
@@ -207,6 +228,7 @@ body::before {
     display: block;
 }
 
+/* Utgangsdøren til høyre */
 .exit {
     position: relative;
     z-index: 2;
