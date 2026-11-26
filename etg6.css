@@ -85,7 +85,7 @@ body {
     animation: blink 1.5s infinite;
 }
 
-/*KI er brukt her for hjelp med struktur og oppsett av keyframes da jeg var litt usikker dette*/
+/*KI er brukt her for hjelp med struktur og oppsett av keyframes da jeg var litt usikker på dette*/
 @keyframes blink {
     0%, 100% {
         opacity:1;
