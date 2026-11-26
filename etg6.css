@@ -48,7 +48,7 @@ body {
     border-bottom: 2.5px solid black;
 }
 
-/*Animasjon for spotter som blinker i taket*/
+/*Animasjon for spotter som blinker i taket, KI er brukt for hjelp med keyframes*/
 .lampe1 {
     position: absolute;
     top: 5%;
@@ -85,7 +85,7 @@ body {
     animation: blink 1.5s infinite;
 }
 
-
+/*KI er brukt her for hjelp med struktur og oppsett av keyframes da jeg var litt usikker dette*/
 @keyframes blink {
     0%, 100% {
         opacity:1;
@@ -197,7 +197,7 @@ body {
     border: 2.7px solid black;
 }
 
-/* Plassering av maleriet "Livets dans" + hover transition på bildet */
+/* Plassering av maleriet "Livets dans" + hover transition på bildet. Her er KI brukt for hjelp med transition. */
 .picture-container-1 {
     position: absolute;
     top: 18%;
@@ -213,7 +213,7 @@ body {
             border: 4px solid goldenrod;
         }
 
-        /* Gir form til hover transition */ 
+        /* Gir form til hover transition, KI brukt for å hjelpe meg med å forstå hvordan jeg setter opp transform koden*/ 
         .picture-container-1:hover {
             transform: scale(1.05);
         }
@@ -236,7 +236,7 @@ body {
             border: 4px solid goldenrod;
         }
 
-        /* Gir form til hover transition */ 
+        /* Gir form til hover transition, igjen KI brukt her for hjelp til å lære meg eksakt oppsett av transitionen */ 
         .picture-container-2:hover {
             transform: scale(1.05);
         }
@@ -260,7 +260,7 @@ body {
             border: 4px solid goldenrod;
         }
 
-         /* Gir form til hover transition */ 
+         /* Gir form til hover transition, igjen KI brukt her som nevnt i de overnevnte transitionen på maleriene */ 
         .picture-container-3:hover {
             transform: scale(1.05);
         }
@@ -275,11 +275,14 @@ body {
     text-align: center;
 }
 
-/*Popup med info om hvert maleri*/
+/*Popup med info om hvert maleri, her er det brukt KI for å hjelpe meg med å lage popupen i HTML og å knytte den opp med CSSen. Alle de 4 seksjonene med popup relatert kode nedenfor har KI hjulpet meg med å forstå og utforme.*/
 .popup {
     display: none;
     position: fixed;
-    inset: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
     z-index: 10;
     align-items: center;
     justify-content: center;
@@ -292,7 +295,10 @@ body {
 
 .popup-background {
     position: absolute;
-    inset: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
     background: rgba(0, 0, 0, 0.75);
 }
 
