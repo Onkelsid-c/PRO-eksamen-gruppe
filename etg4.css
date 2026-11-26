@@ -1,0 +1,260 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    height: 100%;
+    background: #0c0a09;
+}
+
+body {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    padding: 0 1.5vw 28vh;
+    background-color: #070605;
+}
+
+.vegg,
+.gulv {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    object-fit: cover;
+    z-index: 0;
+    pointer-events: none;
+}
+
+.vegg {
+    top: 0;
+    height: calc(100% - 28vh);
+}
+
+.gulv {
+    bottom: 0;
+    height: 28vh;
+}
+
+body::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 28vh;
+    z-index: 1;
+    height: 14px;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.55), transparent);
+    pointer-events: none;
+}
+
+.malerier {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    gap: 1.4vw;
+    flex: 1 1 auto;
+    min-width: 0;
+    margin: 0 8vw 10vh 0;
+}
+
+.maleri-plass {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    min-width: 0;
+}
+
+.maleri {
+    padding: 0.35vh;
+    border: 0.4vh solid #3a2c22;
+    background: #100c0a;
+    box-shadow:
+        inset 0 0 0 0.15vh #6a5340,
+        0 1vh 1.8vh rgba(0, 0, 0, 0.7);
+    line-height: 0;
+    cursor: pointer;
+}
+
+.ghost {
+    position: absolute;
+    z-index: 4;
+    height: 14vh;
+    width: auto;
+    left: 0;
+    top: -16vh;
+    pointer-events: none;
+    animation: fly 16s ease-in-out infinite;
+}
+
+@keyframes fly {
+    0% {
+        left: -6%;
+        top: -18vh;
+    }
+
+    18% {
+        left: 30%;
+        top: -26vh;
+    }
+
+    37% {
+        left: 70%;
+        top: -16.5vh;
+    }
+
+    55% {
+        left: 86%;
+        top: -23vh;
+    }
+
+    74% {
+        left: 42%;
+        top: -17vh;
+    }
+
+    100% {
+        left: -6%;
+        top: -18vh;
+    }
+}
+
+.info {
+    position: absolute;
+    left: 50%;
+    bottom: calc(100% + 1.6vh);
+    z-index: 6;
+    width: min(640px, 92%);
+    padding: 16px 28px 18px;
+    border: 2px solid #1c1612;
+    border-radius: 36px;
+    background: #f4f0e8;
+    color: #1c1612;
+    text-align: center;
+    box-shadow: 0 14px 32px rgba(0, 0, 0, 0.55);
+    opacity: 0;
+    pointer-events: none;
+    transform: translateX(-50%) translateY(12px);
+    transition: opacity 0.35s ease, transform 0.35s ease;
+}
+
+.info h2 {
+    margin: 0 0 6px;
+    font-family: Georgia, serif;
+    font-size: 20px;
+    font-weight: normal;
+}
+
+.info p {
+    margin: 0;
+    font-family: Georgia, serif;
+    font-size: 15px;
+    line-height: 1.45;
+}
+
+.maleri-plass:has(.maleri:hover) .info {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+}
+
+.maleri img {
+    display: block;
+    width: auto;
+    height: 22vh;
+    max-width: 18vw;
+    object-fit: contain;
+}
+
+.navnskilt {
+    height: 44px;
+    margin: 1.2vh 0 0;
+    padding: 0 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid #1c1612;
+    border-radius: 999px;
+    background: #f4f0e8;
+    color: #1c1612;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    line-height: 1;
+    white-space: nowrap;
+}
+
+.venstre {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+    gap: 1.2vh;
+}
+
+.dor {
+    height: 34vh;
+    width: auto;
+    display: block;
+}
+
+.heisknapper {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.elevatorbutton1,
+.elevatorbutton2,
+.elevatorbutton3,
+.elevatorbutton4,
+.elevatorbutton5,
+.elevatorbutton6 {
+    width: 30px;
+    height: 30px;
+    line-height: 0;
+    transition: transform 0.2s ease;
+}
+
+.elevatorbutton1:hover,
+.elevatorbutton2:hover,
+.elevatorbutton3:hover,
+.elevatorbutton4:hover,
+.elevatorbutton5:hover,
+.elevatorbutton6:hover {
+    transform: scale(1.25);
+}
+
+.elevatorbutton1:active,
+.elevatorbutton2:active,
+.elevatorbutton3:active,
+.elevatorbutton4:active,
+.elevatorbutton5:active,
+.elevatorbutton6:active {
+    transform: scale(0.9);
+}
+
+.elevatorbutton1 img,
+.elevatorbutton2 img,
+.elevatorbutton3 img,
+.elevatorbutton4 img,
+.elevatorbutton5 img,
+.elevatorbutton6 img {
+    width: 90%;
+    height: 90%;
+    display: block;
+}
+
+.exit {
+    position: relative;
+    z-index: 2;
+    display: block;
+    flex-shrink: 0;
+    line-height: 0;
+}
