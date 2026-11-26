@@ -1,11 +1,174 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="no">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Etasje 6 - Munch-museet</title>
+   
+<!--Kobler opp til CSS siden-->
+    <link rel="stylesheet" href="etg6.css">
+
 </head>
 <body>
+
+<!--Tak og gulv i HTML koden-->
+<div class="room-6">
+    <div class="ceiling"></div>
+    <div class="floor"></div>
+
+</div>
+
+<!--Spotter i taket-->
+<img class="lampe1" src="Bilder/spott.png" alt="Lampe 1">
+<img class="lampe2" src="Bilder/spott.png" alt="Lampe 2">
+<img class="lampe3" src="Bilder/spott.png" alt="Lampe 3">
+<img class="lampe4" src="Bilder/spott.png" alt="Lampe 4">
+
+
+
+<!-- Heis til venstre-->
+    <div class="elevator-container">
+    <img class="elevator" src="Bilder/heisdor.jpg" alt="Heis">
+
+
+<!--Tekstboks ved siden av heis-->
+<div class="heis-boks">
+    <p>Utforsk en annen etasje ved å klikke på en av heisknappene til venstre!</p>
+</div>
+  
+
+<!--Heisknapper og link til riktig etasje/side, her samarbeidet jeg og David på HTML koden for heisknappene, og KI er brukt som støtte for repetetiv kode-->
+    <a class="elevatorbutton1" href="etg1.html">
+        <img src="Bilder/knapp-1.png" alt="Gå til etasje 1">
+        </a>
+
+    <a class="elevatorbutton2" href="etg2.html">
+        <img src="Bilder/knapp-2.png" alt="Gå til etasje 2">
+        </a>
+
+    <a class="elevatorbutton3" href="etg3.html">
+        <img src="Bilder/knapp-3.png" alt="Gå til etasje 3">
+        </a>
+
+    <a class="elevatorbutton4" href="etg4.html">
+        <img src="Bilder/knapp-4.png" alt="Gå til etasje 4">
+        </a>
+
+    <a class="elevatorbutton5" href="etg5.html">
+        <img src="Bilder/knapp-5.png" alt="Gå til etasje 5">
+        </a>
+
+    <a class="elevatorbutton6" href="etg6.html">
+        <img src="Bilder/knapp-6.png" alt="Gå til etasje 6">
+        </a>
+
+
+        </div>
+
+
+<!--Exitdør på høyre side-->
+<div class="exit-container">
+    <p>NØDUTGANG</p>
+    <a href="etg1.html">
+        <img class="exitdoor" src="Bilder/exitdor.jpg" alt="Gå til 1. etasje">
+    </a>
+</div>
     
+
+
+<!--Bilde av Livets dans maleri-->
+<div class="picture-container-1">
+    <a href="#info-livetsdans">
+        <img src="Bilder/livets-dans.jpeg" alt="Livets dans" class="bilde-1">
+    </a>
+    <p>Klikk på "Livets dans" for å utforske!</p>
+</div>
+
+<!--Popup-info om Livets Dans, her har jeg brukt KI (Gemini) for hjelp med å lage popupen og lukke funksjonen, da jeg var usikker på hvordan dette skulle struktureres/utføres. Jeg har også brukt KI for å hente informasjon om Edvard Munch sine bilder, altså selve teksten jeg har lagt inn i popupen. -->
+<div class="popup" id="info-livetsdans">
+    <a class="popup-background" href="#" aria-label="Lukk popup"></a>
+
+    <div class="popup-content">
+        <a class="close" href="#" aria-label="Lukk">×</a>
+
+        <h2>Livets Dans (1899-1900)</h2>
+        <p>"Livets Dans" er et av Edvard Munchs mest sentrale hovedverk og markerer avslutningen på hans berømte "Livsfrisen" - en serie malerier som utforsker kjærlighet, angst og død. Maleriet viser kvinner i ulike livsfaser på en strand ved Åsgårdstrand under en lys sommernatt.</p>
+        <ul>
+            <li>Venstre (hvit kjole): Den unge, uskyldige kvinnen som strekker seg etter en blomst, full av forventing til livet og kjærligheten.</li>
+            <br>
+            <li>Midten (svart kjole): Den modne kvinnen i livets og lidenskapens blomst, som danser tett med en mørkkledd mann (ofte tolket som Munch selv).</li>
+            <br>
+            <li>Høyre (svart kjole): Den eldre kvinnen står alene og betrakter dansen fra sidelinjen - preget av sorg, ensomhet og livets slutt.</li>
+        </ul>
+    </div>
+</div>
+
+
+        
+<!--Bilde av Pikene på broen maleri-->
+<div class="picture-container-2">
+    <a href="#info-pikenepaabroen">
+        <img src="Bilder/pikene-paa-broen.jpg" alt="Pikene på broen" class="bilde-2">
+    </a>
+    <p> Klikk på "Pikene på broen" for å utforske!</p>
+</div>
+
+<!--Popup-info om Pikene på broen, her har jeg brukt KI (Gemini) for hjelp med å lage popup og lukke-funksjonen, da jeg var usikker på hvordan dette skulle struktureres/utføres. Jeg har også brukt KI for å hente selve informasjon som kommer opp når du trykker på popupen om Edvard Munch sine bilder, altså selve teksten jeg har lagt inn i popupen. -->
+<div class="popup" id="info-pikenepaabroen">
+    <a class="popup-background" href="#" aria-label="Lukk popup"></a>
+
+    <div class="popup-content">
+        <a class="close" href="#" aria-label="Lukk">×</a>
+
+        <h2>Pikene på broen (1901)</h2>
+        <p>"Pikene på broen" er et av Edvard Munchs mest kjente og elskede motiver, og markerer en overgang til en lysere og mer fargesterk periode i kunstnerskapet hans.</p>
+        <ul>
+            <li>Motiv og symbolikk: Maleriet viser tre unge kvinner som står tett sammen ved rekkverket på dampskipsbrygga i Åsgårdstrand en lys sommernatt.</li>
+            <br>
+            <li>Fargene og samholdet: De tre pikene er kledd i hvitt, rødt og grønt og står vendt bort fra betrakteren, ned mot det mørke vannet. Dette tolkes ofte som et bilde på ungdommens oppvåkning, felleskap og forventning til det ukjente voksenlivet.</li>
+            <br>
+        </ul>
+    </div>
+</div>
+
+
+
+<!--Bilde av Solen maleri-->  
+<div class="picture-container-3">
+    <a href="#info-solen">
+        <img src="Bilder/solen.jpg" alt="Solen" class="bilde-3">
+    </a>
+    <p> Klikk på "Solen" for å utforske!</p>
+</div>
+
+<!--Popup-info om Solen, her har jeg brukt KI (Gemini) for hjelp med å lage de popup og lukke funksjonen, da jeg var usikker på hvordan dette skulle struktureres/utføres. Jeg har også brukt KI for å hente informasjon om Edvard Munch sine bilder, altså selve teksten jeg har lagt inn i popupen.-->
+<div class="popup" id="info-solen">
+    <a class="popup-background" href="#" aria-label="Lukk popup"></a>
+
+    <div class="popup-content">
+        <a class="close" href="#" aria-label="Lukk">×</a>
+
+        <h2>Solen (1910-1911)</h2>
+        <p>"Solen" er et av Edvard Munchs mest monumentale og livsbejærende verk, malt som hovedbildet til utsmykningen av Universitetets aula i Oslo. </p>
+            <ul>
+            <li>Motiv og symbolikk: Maleriet viser en blendende, hvit sol som stiger opp over horisonten og sender kraftige fargestråler utover et nakent kystlandskap.</li>
+            <br>
+            <li>Livskraft og opplysning: Etter en periode preget av psykisk sykdom og angst vendte Munch seg mot naturens helbredende og livsgivende krefter. I universitetes aula symboliserer solen også kunnskap, vitenskap og åndelig opplysning.</li>
+            <br>
+            <li>Bakgrunn: Motivet er inspirert av utsikten fra eiendommen Nedre Ramme i Hvitsten der Munch bodde fra 1909 til hans død i 1944.</li>
+        </ul>
+    </div>
+</div>
+
+
+
+<!--Tekstboks for å vise etasje over heisen-->
+<div class="heis-etasje">
+    <p>6.</p>
+</div>
+  
+
+         
 </body>
 </html>

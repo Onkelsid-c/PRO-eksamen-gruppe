@@ -18,16 +18,32 @@ body {
     font-family: Georgia, serif;
 }
 
+/* Overskrift for skjermlesere, synes ikke på siden */
+.skjult {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: 0;
+    overflow: hidden;
+    opacity: 0;
+}
+
 /* Museums salen */
 .museum-room {
     position: absolute;
-    inset: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
     z-index: 0;
 }
 
 .wall {
     position: absolute;
-    inset: 0 0 24%;
+    top: 0;
+    right: 0;
+    bottom: 24%;
+    left: 0;
     background:
         linear-gradient(90deg, #332d28, #51463b 50%, #332d28);
 }
@@ -51,17 +67,11 @@ body {
 }
 
 /* Spotlys stil og plassering */
-.spotlight {
-    position: absolute;
-    inset: 0;
-    z-index: 1;
-    pointer-events: none;
-}
-
 .light1,
 .light2,
 .light3 {
     position: absolute;
+    z-index: 1;
     top: 2%;
     width: 23%;
     height: 62%;
@@ -86,7 +96,7 @@ body {
     left: 60%;
 }
 
-/* Lamper stil 0& posisjon */
+/* Lamper stil og posisjon */
 .lamp {
     position: absolute;
     top: 0;
@@ -119,17 +129,11 @@ body {
 }
 
 /* Bilde rammer stil og posisjon */
-.pictureframe {
-    position: absolute;
-    inset: 0;
-    z-index: 2;
-    pointer-events: none;
-}
-
 .frame1,
 .frame2,
 .frame3 {
     position: absolute;
+    z-index: 2;
     top: 22%;
     width: 19%;
     height: 39%;
@@ -153,17 +157,11 @@ body {
 }
 
 /* Navn skilt */
-.namebox {
-    position: absolute;
-    inset: 0;
-    z-index: 6;
-    pointer-events: none;
-}
-
 .namebox1,
 .namebox2,
 .namebox3 {
     position: absolute;
+    z-index: 6;
     width: 150px;
     min-height: 40px;
     padding: 10px;
@@ -188,19 +186,12 @@ body {
 }
 
 /* Maleriene */
-.picture {
-    position: absolute;
-    inset: 0;
-    z-index: 3;
-    pointer-events: none;
-}
-
 .picture .art-link {
     position: absolute;
     top: 23.5%;
     width: 17.2%;
     height: 36%;
-    pointer-events: auto;
+    z-index: 3;
 }
 
 .picture .art-link img {
@@ -242,6 +233,7 @@ body {
 .elevatorbutton6 {
     position: absolute;
     left: 240px;
+    z-index: 7;
     width: 30px;
     height: 30px;
 }
@@ -269,6 +261,7 @@ body {
 /* Exit døren */
 .exitdoor {
     position: absolute;
+    z-index: 2;
     right: 2%;
     bottom: 24%;
     height: 400px;
@@ -276,16 +269,10 @@ body {
 }
 
 /* Museums gjestene */
-.people {
-    position: absolute;
-    inset: 0;
-    z-index: 5;
-    pointer-events: none;
-}
-
 .person {
     position: absolute;
-    bottom: 8%;
+    z-index: 5;
+    bottom: 6%;
     width: 7%;
     height: 18%;
 }
@@ -300,11 +287,14 @@ body {
 .person8 { left: 87%; }
 
 
-/* Pop up vindu når maleriene trykkes */
+/* Pop up vindu når maleriene trykkes - KI assistert */
 .popup {
     display: none;
     position: fixed;
-    inset: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
     z-index: 10;
     align-items: center;
     justify-content: center;
@@ -317,14 +307,18 @@ body {
 
 .popup-background {
     position: absolute;
-    inset: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
     background: rgba(0, 0, 0, 0.75);
 }
 
 .popup-content {
     position: relative;
     z-index: 1;
-    width: min(600px, 90%);
+    width: 90%;
+    max-width: 600px;
     max-height: 85vh;
     overflow-y: auto;
     padding: 25px;
@@ -340,7 +334,7 @@ body {
 }
 
 
-/* Animasjon og Transitions */
+/* Animasjon og Transitions - KI assistert */
 .picture .art-link img {
     transition: transform 0.2s ease;
 }

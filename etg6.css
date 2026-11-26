@@ -1,0 +1,313 @@
+main{
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color:black;
+    padding: 40px;
+    text-align: center;
+}
+
+
+body {
+    background-color:rgb(24, 83, 65);
+    color:black;
+    font-family:Arial, Arial;
+    min-height: 100vh;
+}
+
+
+/*Gulv - fått hjelp av KI til å utforme stylingen av gulvet og hvordan oppsettet på koden skulle være*/
+.floor {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 9.79%;
+    background:repeating-linear-gradient(
+            90deg,
+            transparent 0,
+            transparent 18%,
+            #44372d 18.2%,
+            transparent 18.5%
+        ),
+        linear-gradient(#594738, #30251f);
+    border-top: 18px solid white;
+}
+
+
+/*Tak*/
+.ceiling {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    height: 13%;
+    background:linear-gradient(white 60%, rgb(97, 88, 88)); /*Gir gradient effekt på taket*/
+    border-bottom: 2.5px solid black;
+}
+
+/*Animasjon for spotter som blinker i taket, KI er brukt for hjelp med keyframes*/
+.lampe1 {
+    position: absolute;
+    top: 5%;
+    left: 10%;
+    width: 50px;
+    height: auto;
+    animation: blink 1.5s infinite;
+}
+
+.lampe2 {
+    position: absolute;
+    top: 5%;
+    left: 30%;
+    width: 50px;
+    height: auto;
+    animation: blink 1.5s infinite;
+}
+
+.lampe3 {
+    position: absolute;
+    top: 5%;
+    left: 60%;
+    width: 50px;
+    height: auto;
+    animation: blink 1.5s infinite;
+}
+
+.lampe4 {
+    position: absolute;
+    top: 5%;
+    left: 85%;
+    width: 50px;
+    height: auto;
+    animation: blink 1.5s infinite;
+}
+
+/*KI er brukt her for hjelp med struktur og oppsett av keyframes da jeg var litt usikker på dette*/
+@keyframes blink {
+    0%, 100% {
+        opacity:1;
+    }
+    50% {
+        opacity: 0.25;
+    }
+}
+
+/* Heis posisjon */
+.elevator {
+    position:absolute;
+    left:2%;
+    bottom:9.8%;
+    height:330px;
+    width: 200px;
+}
+
+/* Heis knapp styling */
+.elevatorbutton1,
+.elevatorbutton2,
+.elevatorbutton3,
+.elevatorbutton4,
+.elevatorbutton5,
+.elevatorbutton6 {
+    position: absolute;
+    left: 240px;
+    width: 30px;
+    height: 30px;
+}
+
+.elevatorbutton1 img,
+.elevatorbutton2 img,
+.elevatorbutton3 img,
+.elevatorbutton4 img,
+.elevatorbutton5 img,
+.elevatorbutton6 img {
+    width: 90%;
+    height: 90%;
+}
+
+/* Heis knapper plassering */
+.elevatorbutton1 { bottom: 360px; }
+.elevatorbutton2 { bottom: 320px; }
+.elevatorbutton3 { bottom: 280px; }
+.elevatorbutton4 { bottom: 240px; }
+.elevatorbutton5 { bottom: 200px; }
+.elevatorbutton6 { bottom: 160px; }
+
+
+/*Tekst boks ved siden av heis*/
+.heis-boks {
+    position: absolute;
+    left: 19.5%;
+    bottom: 30%;
+    max-width: 150px;
+    padding: 10px 12px;
+    background-color: white;
+    border: 2px solid gold;
+    border-radius: 2px;
+}
+
+.heis-boks p {
+    margin: 0;
+    color: black;
+    font-size: 13px;
+    line-height: 1.35;
+}
+
+
+/*Tekstboks for å vise etasje over heis*/
+.heis-etasje {
+    position: absolute;
+    left: 7.3%;
+    bottom: 50%;
+    max-width: 30px;
+    padding: 10px 12px;
+    background-color: grey;
+    border: 2.5px solid black;
+}
+
+.heis-etasje p {
+    margin: 0;
+    color: red;
+    font-size: 15px;
+    line-height: 0.1;
+}
+
+
+
+/* Exit døren */
+.exit-container {
+    position: absolute;
+    right: 2%;
+    bottom: 9.06%;
+    text-align: center;
+    
+}
+
+.exit-container p {
+    margin: 0 0 6px 0;
+    color: red;
+    font-size: 19px;
+}
+
+.exitdoor {
+    height: 330px;
+    width: 170px;
+    border: 2.7px solid black;
+}
+
+/* Plassering av maleriet "Livets dans" + hover transition på bildet. Her er KI brukt for hjelp med transition. */
+.picture-container-1 {
+    position: absolute;
+    top: 18%;
+    left: 24%;
+    width: 22%;
+    transition: transform 0.3s ease-in-out;
+}
+        /*Fastsetter bredden på container og gjør høyden på bildet automatisk slik at proposjenene på bildet bevares*/
+        .picture-container-1 img {
+            width: 100%;
+            height: auto;
+            display: block;
+            border: 4px solid goldenrod;
+        }
+
+        /* Gir form til hover transition, KI brukt for å hjelpe meg med å forstå hvordan jeg setter opp transform koden*/ 
+        .picture-container-1:hover {
+            transform: scale(1.05);
+        }
+      
+
+
+/*Plassering av maleriet "Pikene på broen"*/
+.picture-container-2 {
+    position: absolute;
+    top: 17%;
+    right: 25%;
+    width: 14%;
+    transition: transform 0.3s ease-in-out;
+}
+        /*Fastsetter bredden på container og gjør høyden på bildet automatisk slik at proposjenene på bildet bevares*/
+        .picture-container-2 img {
+            width: 100%;
+            height: auto;
+            display: block;
+            border: 4px solid goldenrod;
+        }
+
+        /* Gir form til hover transition, igjen KI brukt her for hjelp til å lære meg eksakt oppsett av transitionen */ 
+        .picture-container-2:hover {
+            transform: scale(1.05);
+        }
+
+
+
+
+/*Plassering av maleriet "Solen"*/
+.picture-container-3 {
+    position: absolute;
+    top: 50.7%;
+    right: 34%;
+    width: 32%;
+    transition: transform 0.3s ease-in-out;
+}
+        /*Fastsetter bredden på container og gjør høyden på bildet automatisk slik at proposjenene på bildet bevares*/
+        .picture-container-3 img {
+            width: 100%;
+            height: auto;
+            display: block;
+            border: 4px solid goldenrod;
+        }
+
+         /* Gir form til hover transition, igjen KI brukt her som nevnt i de overnevnte transitionen på maleriene */ 
+        .picture-container-3:hover {
+            transform: scale(1.05);
+        }
+
+
+
+/*Setter distansen mellom tekst-elementete og bildene + sentrerer teksten*/       
+.picture-container-1 p,
+.picture-container-2 p,
+.picture-container-3 p {
+    margin: 6px;
+    text-align: center;
+}
+
+/*Popup med info om hvert maleri, her er det brukt KI for å hjelpe meg med å lage popupen i HTML og å knytte den opp med CSSen. Alle de 4 seksjonene med popup relatert kode nedenfor har KI hjulpet meg med å forstå og utforme.*/
+.popup {
+    display: none;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 10;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.popup:target {
+    display: flex;
+}
+
+.popup-background {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.75);
+}
+
+.popup-content {
+    position: relative;
+    z-index: 1;
+    width: min(700px, 90%);
+    max-height: 100vh;
+    overflow-y: auto;
+    padding: 25px;
+    background: #f1eee8;
+}
