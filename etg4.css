@@ -27,7 +27,6 @@ body {
     width: 100%;
     object-fit: cover;
     z-index: 0;
-    pointer-events: none;
 }
 
 .vegg {
@@ -50,7 +49,6 @@ body::before {
     z-index: 1;
     height: 14px;
     background: linear-gradient(to bottom, rgba(0, 0, 0, 0.55), transparent);
-    pointer-events: none;
 }
 
 .malerier {
@@ -89,7 +87,6 @@ body::before {
     width: auto;
     left: 0;
     top: -144px;
-    pointer-events: none;
     animation: fly 16s ease-in-out infinite;
 }
 
@@ -116,7 +113,6 @@ body::before {
     text-align: center;
     box-shadow: 0 14px 32px rgba(0, 0, 0, 0.55);
     opacity: 0;
-    pointer-events: none;
     transform: translateX(-50%) translateY(12px);
     transition: opacity 0.35s ease, transform 0.35s ease;
 }
