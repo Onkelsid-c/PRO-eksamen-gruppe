@@ -230,12 +230,18 @@ body {
   }
 }
 
-/* Når tyven klikkes (checkbox checked), fader bildet, mannen og tyven ut */
+/* KI-bruk: Jeg har brukt KI for å skrive koden for denne seksjonen ("Når tyven klikkes"). 
+   KI hjalp meg med å bruke :checked for å utløse effekten, og å bytte ut pointer-events 
+   med visibility for å oppnå ønsket effekt innenfor de tillatte CSS-egenskapene. */
+/* Når tyven klikkes (checkbox checked), fader bildet, mannen og tyven ut.
+   visibility: hidden (med forsinket transition) gjør dem ikke-klikkbare etter faden,
+   og erstatter pointer-events: none som ikke er på listen over tillatte CSS-egenskaper. */
 .steal-checkbox:checked ~ .museum-room .picture,
 .steal-checkbox:checked ~ .museum-room .visitor,
 .steal-checkbox:checked ~ .museum-room .thief-label {
   opacity: 0;
-  pointer-events: none;
+  visibility: hidden;
+  transition: opacity 1s ease, visibility 0s 1s;
 }
 
 /* Viser tyveri-popupen når tyven klikkes */
@@ -306,8 +312,10 @@ body {
   color: #4a3123;
 }
 
+/* Utheving av ord (f.eks. malerinavn). font-style er ikke tillatt,
+   så vi bruker font-weight: bold for visuell utheving i stedet. */
 .italic {
-  font-style: italic;
+  font-weight: bold;
 }
 
 .close {
