@@ -4,15 +4,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Heis</title>
+    <!-- Kobler til CSS for 4. etasje -->
     <link rel="stylesheet" href="etg4.css">
 </head>
 <body>
+    <h1 style="position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0">Etasje 4</h1>
+
+    <!-- Vegg og gulv -->
     <img class="vegg" src="bilder/vegg-etg4.jpg" alt="">
     <img class="gulv" src="bilder/gulv-etg4.jpg" alt="">
 
+    <!-- Heis og etasjeknapper til venstre. Flex legger dem ved siden av hverandre. -->
     <div class="venstre">
     <img class="dor" src="bilder/heisdor.jpg" alt="Heis">
 
+    <!-- Knapper under hverandre, med lenke til hver etasje -->
     <nav class="heisknapper" aria-label="Etasjer">
         <a class="elevatorbutton1" href="etg1.html">
             <img src="bilder/knapp-1.png" alt="Gå til etasje 1">
@@ -35,10 +41,11 @@
     </nav>
 </div>
 
+    <!-- Malerier på en rad midt på veggen. Hvert maleri er lite, med navneskilt under. -->
     <section class="malerier" aria-label="Malerier på veggen">
         <div class="maleri-plass">
             <div class="maleri">
-                <img src="bilder/Det syke barn.jpg" alt="Det syke barn">
+                <img src="bilder/Det%20syke%20barn.jpg" alt="Det syke barn">
             </div>
             <p class="navnskilt">Det syke barn</p>
             <div class="info">
@@ -48,7 +55,7 @@
         </div>
         <div class="maleri-plass">
             <div class="maleri">
-                <img src="bilder/Aften på Karl Johan.jpg" alt="Aften på Karl Johan">
+                <img src="bilder/Aften%20p%C3%A5%20Karl%20Johan.jpg" alt="Aften på Karl Johan">
             </div>
             <p class="navnskilt">Aften på Karl Johan</p>
             <div class="info">
@@ -77,9 +84,11 @@
             </div>
         </div>
 
+        <!-- Spøkelse som flyr over maleriene -->
         <img class="ghost" src="bilder/ghost.png" alt="Spøkelse">
     </section>
 
+    <!-- Utgangsdør til høyre, går til 1. etasje -->
 <a class="exit" href="etg1.html"><img class="dor" src="bilder/exitdor.jpg" alt="Gå til 1. etasje"></a>
 </body>
 </html>
