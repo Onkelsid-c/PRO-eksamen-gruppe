@@ -236,6 +236,7 @@ body {
 /* Når tyven klikkes (checkbox checked), fader bildet, mannen og tyven ut.
    visibility: hidden (med forsinket transition) gjør dem ikke-klikkbare etter faden,
    og erstatter pointer-events: none som ikke er på listen over tillatte CSS-egenskaper. */
+/* Brukt KI til å konfigurere checked attributter og rettet selv skrevende feil  */
 .steal-checkbox:checked ~ .museum-room .picture,
 .steal-checkbox:checked ~ .museum-room .visitor,
 .steal-checkbox:checked ~ .museum-room .thief-label {
