@@ -17,6 +17,23 @@ body {
   background-color: #1a1a1a;
 }
 
+/* Instrukser */
+.instruction-text {
+  position: absolute;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 20; 
+  padding: 12px 24px;
+  background-color: rgba(0, 0, 0, 0.8);
+  color: #ffffff;
+  font-family: Arial, sans-serif;
+  font-size: 20px;
+  text-align: center;
+  border-radius: 8px;
+  border: 2px solid #ffffff;
+}
+
 /* Skjuler selve avkrysningsboksene, men de brukes for å utløse effekter */
 .steal-checkbox,
 .close-theft-checkbox {
